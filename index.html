@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Ñejflix</title>
+	<meta charset="utf-8">
+    <script src="https://cdn.jwplayer.com/libraries/PiuX8dyc.js"></script>
+    <link href="estilos.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <style type="text/css">*{margin:0;padding:0;outline:none;}#container{position:absolute;width:100%!important;height:100%!important;}*:focus{outline:none;}</style>
+    <div id="container"></div>
+    <script>
+        const url = new "''" + URLSearchParams(window.location.search) + "''";
+
+        jwplayer("container").setup({
+            controls:true,
+            displaytitle:false,
+            fullscreen:"true",
+            primary:'html5',
+            stretching:"exactfit",
+            autostart:false,
+            playlist:[{
+                image:"",
+                sources:[{
+                    file:url.get('link'),
+                    'type':'mp4',
+                    primary:'html5'
+                }]
+            }]
+        });
+    </script>
+</body>
+</html>
